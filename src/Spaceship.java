@@ -47,7 +47,10 @@ public class Spaceship {
 
     //Write these functions using functional programming:
     public static int sumOfEarthGuns (List<Spaceship> ships) {
-        return -1;
+        return ships.stream()
+                .filter(e -> e.hasWarpDrive == true )
+                .mapToInt(e -> e.numLasers)
+                .sum();
     }
 
     public static void sendShipsToFightMonsters (List<Spaceship> ships) {
