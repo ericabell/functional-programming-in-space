@@ -54,7 +54,8 @@ public class Spaceship {
     }
 
     public static void sendShipsToFightMonsters (List<Spaceship> ships) {
-
+        ships.stream()
+                .forEach(Spaceship::fightSpaceMonster);
     }
 
     public static Spaceship findMostGunsWithSize(List<Spaceship> ships, int size) {
